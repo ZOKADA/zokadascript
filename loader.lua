@@ -4,14 +4,12 @@ local Players = game:GetService("Players")
 local player = Players.LocalPlayer
 local playerGui = player:WaitForChild("PlayerGui")
 
--- Ana GUI
 local screenGui = Instance.new("ScreenGui")
 screenGui.Name = "ZokadaXPremium"
 screenGui.Parent = playerGui
 screenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 screenGui.ResetOnSpawn = false
 
--- Ana container(Daha modern köşeler ve gölge efekti için Stroke kullandım)
 local mainContainer = Instance.new("Frame")
 mainContainer.Size = UDim2.new(0, 450, 0, 400)
 mainContainer.Position = UDim2.new(0.5, -225, 0.5, -200)
@@ -20,14 +18,12 @@ mainContainer.BorderSizePixel = 0
 mainContainer.ClipsDescendants = true
 mainContainer.Parent = screenGui
 
--- Köşe yuvarlaklığı için UIStroke (Modern görünüm)
 local containerStroke = Instance.new("UIStroke")
 containerStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
 containerStroke.Color = Color3.fromRGB(80, 80, 80)
 containerStroke.Thickness = 2
 containerStroke.Parent = mainContainer
 
--- Başlık barı(Daha ince ve şık)
 local titleBar = Instance.new("Frame")
 titleBar.Size = UDim2.new(1, 0, 0, 30)
 titleBar.Position = UDim2.new(0, 0, 0, 0)
@@ -45,7 +41,6 @@ titleText.Font = Enum.Font.GothamBold
 titleText.TextSize = 14
 titleText.Parent = titleBar
 
--- Kapatma butonu(Daha minimalist)
 local closeButton = Instance.new("TextButton")
 closeButton.Size = UDim2.new(0, 30, 0, 30)
 closeButton.Position = UDim2.new(1, -30, 0, 0)
@@ -57,14 +52,12 @@ closeButton.Font = Enum.Font.Gotham
 closeButton.TextSize = 14
 closeButton.Parent = titleBar
 
--- İçerik alanı
 local contentFrame = Instance.new("Frame")
 contentFrame.Size = UDim2.new(1, -20, 1, -50)
 contentFrame.Position = UDim2.new(0, 10, 0, 40)
 contentFrame.BackgroundTransparency = 1
 contentFrame.Parent = mainContainer
 
--- Key Input(Daha temiz tasarım)
 local keyBox = Instance.new("TextBox")
 keyBox.Size = UDim2.new(1, 0, 0, 40)
 keyBox.Position = UDim2.new(0, 0, 0, 20)
@@ -76,7 +69,6 @@ keyBox.TextSize = 14
 keyBox.TextXAlignment = Enum.TextXAlignment.Center
 keyBox.Parent = contentFrame
 
--- Butonlar(Modern, köşeli değil hafif yuvarlak)
 local checkButton = Instance.new("TextButton")
 checkButton.Size = UDim2.new(1, 0, 0, 40)
 checkButton.Position = UDim2.new(0, 0, 0, 70)
@@ -99,7 +91,6 @@ getKeyButton.Font = Enum.Font.GothamBold
 getKeyButton.TextSize = 14
 getKeyButton.Parent = contentFrame
 
--- Status label(daha minimalist)
 local statusLabel = Instance.new("TextLabel")
 statusLabel.Size = UDim2.new(1, 0, 0, 20)
 statusLabel.Position = UDim2.new(0, 0, 0, 170)
@@ -111,7 +102,6 @@ statusLabel.TextSize = 12
 statusLabel.TextXAlignment = Enum.TextXAlignment.Center
 statusLabel.Parent = contentFrame
 
--- Footer(version bilgisi)
 local footer = Instance.new("TextLabel")
 footer.Size = UDim2.new(1, 0, 0, 20)
 footer.Position = UDim2.new(0, 0, 1, -20)
@@ -123,7 +113,6 @@ footer.TextSize = 10
 footer.TextXAlignment = Enum.TextXAlignment.Center
 footer.Parent = contentFrame
 
--- Animasyonlar için fonksiyon
 local function tweenObject(obj, properties, duration)
     local tweenInfo = TweenInfo.new (duration, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
     local tween = TweenService:Create(obj, tweenInfo, properties)
@@ -131,12 +120,11 @@ local function tweenObject(obj, properties, duration)
     return tween
 end
 
--- Değişkenler
-local correctKey = "k7R2m9X5a3T8b6Q1y4Z0pV9nL3sF7wD2" -- KEYİ BURAYA YAZ
-local hileScriptLink = "https://pastebin.com/raw/YCJMUecz" -- HİLE LİNKİ
-local linkvertiseLink = "https://workink.net/24bq/e7phcd75" -- LİNKVERTİSE LİNKİN
 
--- Buton olayları
+local correctKey = "k7R2m9X5a3T8b6Q1y4Z0pV9nL3sF7wD2" 
+local hileScriptLink = "https://pastebin.com/raw/YCJMUecz" 
+local linkvertiseLink = "https://workink.net/24bq/e7phcd75"
+
 getKeyButton.MouseButton1Click:Connect(function()
     setclipboard(linkvertiseLink)
     statusLabel.Text = "Status: Link copied to clipboard!"
@@ -167,7 +155,6 @@ closeButton.MouseButton1Click:Connect(function()
     screenGui: Destroy()
 end)
 
--- Sürükleme özelliği(sadece başlık barından)
 local dragging = false
 local dragInput, dragStart, startPos
 
@@ -197,7 +184,6 @@ UserInputService.InputChanged:Connect(function(input)
     end
 end)
 
--- Açılış animasyonu
 mainContainer.Size = UDim2.new(0, 0, 0, 400)
 mainContainer.Position = UDim2.new(0.5, 0, 0.5, -200)
 tweenObject(mainContainer, { Size = UDim2.new(0, 450, 0, 400), Position = UDim2.new(0.5, -225, 0.5, -200)}, 0.5)
