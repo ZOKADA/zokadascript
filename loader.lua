@@ -10,7 +10,7 @@ screenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 
 local mainFrame = Instance.new("Frame")
-mainFrame.Size = UDim2.new(0, 400, 0, 250)-- Yükseklik arttı
+mainFrame.Size = UDim2.new(0, 400, 0, 250)
 mainFrame.Position = UDim2.new(0.5, -200, 0.5, -125)
 mainFrame.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
 mainFrame.BorderSizePixel = 0
@@ -56,7 +56,7 @@ getKeyButton.BackgroundColor3 = Color3.fromRGB(0, 100, 0)
 getKeyButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 getKeyButton.Parent = mainFrame
 
-
+-- Kapatma butonu
 local closeButton = Instance.new("TextButton")
 closeButton.Size = UDim2.new(0, 30, 0, 30)
 closeButton.Position = UDim2.new(1, -35, 0, 5)
@@ -72,7 +72,7 @@ local CorrectKey = "k7R2m9X5a3T8b6Q1y4Z0pV9nL3sF7wD2"
 local HileScriptLink = "https://pastebin.com/raw/YCJMUecz" 
 
 
-local LinkvertiseLink = "https://www.bing.com/images/search?q=zokada&form=HDRSC3&first=1" 
+local LinkvertiseLink = "https://workink.net/24bq/e7phcd75" 
 
 
 getKeyButton.MouseButton1Click:Connect(function()
@@ -86,7 +86,7 @@ getKeyButton.MouseButton1Click:Connect(function()
     })
 end)
 
--- Onay butonunun click olayı
+
 submitButton.MouseButton1Click:Connect(function()
     if keyBox.Text == CorrectKey then
         loadstring(game: HttpGet(HileScriptLink))()
