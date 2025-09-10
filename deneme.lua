@@ -11,7 +11,7 @@ screenGui.Parent = playerGui
 screenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 screenGui.ResetOnSpawn = false
 
--- Ana container (Daha modern köşeler ve gölge efekti için Stroke kullandım)
+-- Ana container(Daha modern köşeler ve gölge efekti için Stroke kullandım)
 local mainContainer = Instance.new("Frame")
 mainContainer.Size = UDim2.new(0, 450, 0, 400)
 mainContainer.Position = UDim2.new(0.5, -225, 0.5, -200)
@@ -27,7 +27,7 @@ containerStroke.Color = Color3.fromRGB(80, 80, 80)
 containerStroke.Thickness = 2
 containerStroke.Parent = mainContainer
 
--- Başlık barı (Daha ince ve şık)
+-- Başlık barı(Daha ince ve şık)
 local titleBar = Instance.new("Frame")
 titleBar.Size = UDim2.new(1, 0, 0, 30)
 titleBar.Position = UDim2.new(0, 0, 0, 0)
@@ -45,7 +45,7 @@ titleText.Font = Enum.Font.GothamBold
 titleText.TextSize = 14
 titleText.Parent = titleBar
 
--- Kapatma butonu (Daha minimalist)
+-- Kapatma butonu(Daha minimalist)
 local closeButton = Instance.new("TextButton")
 closeButton.Size = UDim2.new(0, 30, 0, 30)
 closeButton.Position = UDim2.new(1, -30, 0, 0)
@@ -64,7 +64,7 @@ contentFrame.Position = UDim2.new(0, 10, 0, 40)
 contentFrame.BackgroundTransparency = 1
 contentFrame.Parent = mainContainer
 
--- Key Input (Daha temiz tasarım)
+-- Key Input(Daha temiz tasarım)
 local keyBox = Instance.new("TextBox")
 keyBox.Size = UDim2.new(1, 0, 0, 40)
 keyBox.Position = UDim2.new(0, 0, 0, 20)
@@ -76,7 +76,7 @@ keyBox.TextSize = 14
 keyBox.TextXAlignment = Enum.TextXAlignment.Center
 keyBox.Parent = contentFrame
 
--- Butonlar (Modern, köşeli değil hafif yuvarlak)
+-- Butonlar(Modern, köşeli değil hafif yuvarlak)
 local checkButton = Instance.new("TextButton")
 checkButton.Size = UDim2.new(1, 0, 0, 40)
 checkButton.Position = UDim2.new(0, 0, 0, 70)
@@ -99,7 +99,7 @@ getKeyButton.Font = Enum.Font.GothamBold
 getKeyButton.TextSize = 14
 getKeyButton.Parent = contentFrame
 
--- Status label (daha minimalist)
+-- Status label(daha minimalist)
 local statusLabel = Instance.new("TextLabel")
 statusLabel.Size = UDim2.new(1, 0, 0, 20)
 statusLabel.Position = UDim2.new(0, 0, 0, 170)
@@ -111,7 +111,7 @@ statusLabel.TextSize = 12
 statusLabel.TextXAlignment = Enum.TextXAlignment.Center
 statusLabel.Parent = contentFrame
 
--- Footer (version bilgisi)
+-- Footer(version bilgisi)
 local footer = Instance.new("TextLabel")
 footer.Size = UDim2.new(1, 0, 0, 20)
 footer.Position = UDim2.new(0, 0, 1, -20)
@@ -125,16 +125,16 @@ footer.Parent = contentFrame
 
 -- Animasyonlar için fonksiyon
 local function tweenObject(obj, properties, duration)
-    local tweenInfo = TweenInfo.new(duration, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+    local tweenInfo = TweenInfo.new (duration, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
     local tween = TweenService:Create(obj, tweenInfo, properties)
-    tween:Play()
+    tween: Play()
     return tween
 end
 
 -- Değişkenler
-local correctKey = "ZETAKEY2024" -- KEYİ BURAYA YAZ
-local hileScriptLink = "https://pastebin.com/raw/anaHileScriptLinki" -- HİLE LİNKİ
-local linkvertiseLink = "https://linkvertise.com/senin_linkin" -- LİNKVERTİSE LİNKİN
+local correctKey = "k7R2m9X5a3T8b6Q1y4Z0pV9nL3sF7wD2" -- KEYİ BURAYA YAZ
+local hileScriptLink = "https://pastebin.com/raw/YCJMUecz" -- HİLE LİNKİ
+local linkvertiseLink = "https://workink.net/24bq/e7phcd75" -- LİNKVERTİSE LİNKİN
 
 -- Buton olayları
 getKeyButton.MouseButton1Click:Connect(function()
@@ -151,10 +151,10 @@ checkButton.MouseButton1Click:Connect(function()
         statusLabel.Text = "Status: Key correct! Loading..."
         statusLabel.TextColor3 = Color3.fromRGB(0, 200, 0)
         wait(1)
-        loadstring(game:HttpGet(hileScriptLink))()
-        screenGui:Destroy()
+        loadstring(game: HttpGet(hileScriptLink))()
+        screenGui: Destroy()
     else
-        statusLabel.Text = "Status: Invalid key!"
+    statusLabel.Text = "Status: Invalid key!"
         statusLabel.TextColor3 = Color3.fromRGB(200, 0, 0)
         keyBox.Text = ""
         wait(2)
@@ -164,10 +164,10 @@ checkButton.MouseButton1Click:Connect(function()
 end)
 
 closeButton.MouseButton1Click:Connect(function()
-    screenGui:Destroy()
+    screenGui: Destroy()
 end)
 
--- Sürükleme özelliği (sadece başlık barından)
+-- Sürükleme özelliği(sadece başlık barından)
 local dragging = false
 local dragInput, dragStart, startPos
 
@@ -200,4 +200,4 @@ end)
 -- Açılış animasyonu
 mainContainer.Size = UDim2.new(0, 0, 0, 400)
 mainContainer.Position = UDim2.new(0.5, 0, 0.5, -200)
-tweenObject(mainContainer, {Size = UDim2.new(0, 450, 0, 400), Position = UDim2.new(0.5, -225, 0.5, -200)}, 0.5)
+tweenObject(mainContainer, { Size = UDim2.new(0, 450, 0, 400), Position = UDim2.new(0.5, -225, 0.5, -200)}, 0.5)
